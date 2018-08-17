@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wxy.core.basics.dao.BasicsIndexMapper">
+  <resultMap id="BaseResultMap" type="cn.wxy.core.basics.model.BasicsIndex">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="info" jdbcType="VARCHAR" property="info" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <insert id="insert" parameterType="cn.wxy.core.basics.model.BasicsIndex">
+    insert into basics_index (id, unit, info, 
+      create_time)
+    values (#{id,jdbcType=BIGINT}, #{unit,jdbcType=VARCHAR}, #{info,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.wxy.core.basics.model.BasicsIndex">
+    insert into basics_index
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="unit != null">
+        unit,
+      </if>
+      <if test="info != null">
+        info,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="unit != null">
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="info != null">
+        #{info,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

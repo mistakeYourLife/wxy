@@ -1,0 +1,55 @@
+/*iframe标签页*/
+#breadcrumbs{padding:5px 0 0;}
+#tab-content{padding:0 12px;}
+.breadcrumbs .nav-tabs{height:37px;}
+.nav-tabs li .close{display:none;font-size:16px;}
+.nav-tabs .active{position:relative;}
+.nav-tabs .active .close{display:inline-block;position:absolute;top:0;right:0;}
+.nav-tabs>li>a{padding:10px 20px;}
+#iframeTab .main-content{margin-left:0;}
+/*验证提示*/
+.Validform_checktip{display:none;}
+.Validform_checktip.Validform_wrong{display:inline-block;}
+/*对话框尺寸*/
+.modal .modal-dialog.w300{width:300px;}
+.modal .modal-dialog.w400{width:400px;}
+.modal .modal-dialog.w500{width:500px;}
+.modal .modal-dialog.w600{width:600px;}
+.modal .modal-dialog.w700{width:700px;}
+.modal .modal-dialog.w800{width:800px;}
+.modal .modal-dialog.w900{width:900px;}
+.modal .modal-dialog.w1000{width:1000px;}
+.modal .modal-dialog.w1100{width:1100px;}
+.modal .modal-dialog.w1200{width:1200px;}
+/*权限按钮*/
+.permission-false{display:none}
+/*文本*/
+.select-text{
+	line-height:31px;
+}
+.input-text{
+	line-height:31px;
+}
+/*遮罩层*/
+.u-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background-color: #fff;
+    filter: alpha(opacity 50);
+    -moz-opacity: 0.3;
+    opacity: 0.3;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);=======
+}
+.dialog-lease-edit .modal-dialog{
+	width:700px;
+	height:600px;
+}
+/*ueditor display*/
+.modal-backdrop{
+	z-index:501;
+}
+.modal{z-index:1001;}

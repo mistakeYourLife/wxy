@@ -1,0 +1,86 @@
+#parse("/common/common.vm")
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>控制台</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <!-- basic styles -->
+    <link href="$root_url/static/assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="$root_url/static/assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="$root_url/static/assets/css/jquery-ui.min.css"/>
+    <!-- ace styles -->
+    <link rel="stylesheet" href="$root_url/static/assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="$root_url/static/assets/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="$root_url/static/assets/css/ace-skins.min.css"/>
+    <!-- common style -->
+    <link rel="stylesheet" href="$root_url/static/css/common.css"/>
+
+</head>
+<body>
+<div class="main-container indexPage" id="main-container">
+    <script type="text/javascript">
+        try {
+            ace.settings.check('main-container', 'fixed')
+        } catch (e) {
+        }
+    </script>
+
+    <div class="main-container-inner">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+            <span class="menu-text">123123</span>
+        </a>
+
+        <div class="sidebar" id="sidebar">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('sidebar', 'fixed')
+                } catch (e) {
+                }
+            </script>
+            <ul class="nav nav-list">
+                #parse("/common/leftMenu.vm")
+            </ul>
+            <!-- /.nav-list -->
+            <div class="sidebar-collapse" id="sidebar-collapse">
+                <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+            </div>
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('sidebar', 'collapsed')
+                } catch (e) {
+                }
+            </script>
+        </div>
+        <div class="main-content">
+            <div class="breadcrumbs" id="breadcrumbs">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs  " id="iframeTabs" role="tablist">
+                    <li class="active"><a href="#tab-home" id="tabTitle-00" role="tab" data-toggle="tab">首页</a></li>
+                </ul>
+            </div>
+            <!-- Tab panes -->
+            <div class="tab-content" id="tab-content">
+                <div class="tab-pane active" id="tab-home">
+                    <iframe src="$root_url/welcome" width="100%" scrolling="auto" name="contentFrame" class="contentFrame" frameborder="0" id="contentFrame"></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- /.main-content -->
+    </div>
+</div>
+<!-- base -->
+<script src="$root_url/static/js/lib/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src="$root_url/static/assets/js/bootstrap.min.js"></script>
+<script src="$root_url/static/js/common.js"></script>
+<script src="$root_url/static/assets/js/ace-extra.min.js"></script>
+<script src="$root_url/static/assets/js/ace-elements.min.js"></script>
+<script src="$root_url/static/assets/js/ace.min.js"></script>
+</body>
+</html>
+

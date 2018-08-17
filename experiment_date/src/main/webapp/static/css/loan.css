@@ -1,0 +1,33 @@
+#loan-base-table .u-title{
+	width: 130px;
+    text-align: center;
+}
+#loan-base-table .f-vam{
+	vertical-align: middle;
+}
+#loan-base-table .u-table-b{
+	padding: 0px;
+	width:280px;
+}
+.u-td-table{
+	width: 100%;
+}
+#loan-loan-table .modal-footer{
+	text-align: center;
+}
+#loan-loan-table .u-balance{
+	position: absolute;
+	display: block;
+	margin: -20px 0 0 110px;
+	color: #D74147;
+}
+
+#loan-loan-table .u-c-blue{
+	color:blue;
+}
+
+#loan-loan-table .u-div-title{
+	font-size: 18px;
+	margin-bottom: 20px;
+	margin-left: 4px;
+}

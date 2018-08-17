@@ -1,0 +1,74 @@
+#parse("/common/common.vm")
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <link href="$root_url/static/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="$root_url/static/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="$root_url/static/assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="$root_url/static/assets/css/ace.min.css" />
+    <link rel="stylesheet" href="$root_url/static/assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="$root_url/static/assets/css/ace-skins.min.css" />
+    <!-- common style -->
+    <link rel="stylesheet" href="$root_url/static/css/common.css" />
+    <link rel="stylesheet" href="$root_url/static/js/lib/uploadify/uploadify.css" />
+
+    <script src="$root_url/static/js/lib/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="$root_url/static/js/lib/jquery.cookie.js" type="text/javascript"></script>
+
+    <!-- validform style -->
+    <link rel="stylesheet" href="$root_url/static/js/lib/validform/css/style.css" />
+    <!--excel导出-->
+    <link rel="stylesheet" href="$root_url/static/js/lib/TableTools-2.2.4/css/dataTables.tableTools.css"/>
+##加载插件模块内的CSS文件
+    #if($!css_url)
+        <!-- plugins style -->
+        #foreach($src in $css_url)
+            <link rel="stylesheet" href="$src" />
+        #end
+    #end
+</head>
+<body id="iframeTab">
+<div class="main-container" id="main-container">
+    <div class="main-container-inner">
+        <div class="main-content">
+            <div class="page-content">
+                <div class="row">
+                    $screen_content
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        </div><!-- /.main-content -->
+    </div>
+</div>
+<!-- base -->
+<script src="$root_url/static/assets/js/bootstrap.min.js"></script>
+<!-- date -->
+<script src="$root_url/static/assets/js/date-time/bootstrap-datepicker.min.js"></script>
+<!-- validate -->
+##需要修改成Validform
+<script src="$root_url/static/assets/js/jquery.validate.js"></script>
+<script src="$root_url/static/assets/js/additional-methods.js"></script>
+<!-- dialog -->
+<script src="$root_url/static/assets/js/bootbox.min.js"></script>
+<!-- table -->
+<script src="$root_url/static/assets/js/datatable/jquery.dataTables.js"></script>
+<script src="$root_url/static/assets/js/datatable/dataTables.bootstrap.js"></script>
+<!-- form -->
+##需要修改为自己写的方法
+<script src="$root_url/static/assets/js/jquery-ui.min.js"></script>
+<script src="$root_url/static/assets/js/jquery.form.js"></script>
+<script src="$root_url/static/assets/js/jquery3.51.form.js"></script>
+
+<script src="$root_url/static/js/core.js"></script>
+
+
+<script src="$root_url/static/js/lib/validform/validform_v5.3.2_min.js"></script>
+<!--excel导出-->
+<script src="$root_url/static/js/lib/TableTools-2.2.4/js/dataTables.tableTools.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd
+">
+
+     <!--引入属性文件-->
+    <context:property-placeholder location="
+	classpath:data-config.properties,
+	classpath:velocity.properties" />
+
+    <!-- bean的管理 -->
+    <import resource="classpath*:spring-bean.xml" />
+
+    <!-- 自动扫描(自动注入) -->
+    <context:component-scan base-package="cn.wxy" >
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    <!-- 加载mybatis配置文件 -->
+    <import resource="classpath*:spring-persistent.xml" />
+
+
+    <bean id="cacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager" />
+    <!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+
+
+</beans>

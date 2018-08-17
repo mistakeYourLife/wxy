@@ -1,0 +1,5 @@
+#set($root_url = "")
+
+#set($root_js_url = $root_url+"/static/js")
+##set($root_css_url = $root_url+"/static/"+$srcPath+"/css")
+
