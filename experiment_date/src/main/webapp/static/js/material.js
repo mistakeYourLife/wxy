@@ -1,6 +1,12 @@
 jQuery(function($) {
 
-    testTableInit();
+    var materialForm = $("#material_form").Validform({
+        tiptype : 4,
+        btnReset : ".btnReset",
+        ajaxPost : false
+    });
+
+    tableInit();
 
     /*$("#test").on("click",function(){
 
@@ -23,11 +29,54 @@ jQuery(function($) {
             });
         }
     });*/
+
+
+
+    //新增
+    $('#new_material').on('click', function() {
+
+
+        materialForm.resetForm();
+
+        $('#material-modal-table').modal({
+            'show': true
+        });
+    });
+
+    $("#save_material").on('click', function() {
+
+
+        $("#save_material").addClass("disabled");
+        if (materialForm.check(false)) {
+            $('#material_form').xform('post', '/material/save', function(data) {
+                if (!data.success) {
+                    if (!!data.resultCodeEum) {
+                        bootbox.alert(data.resultCodeEum[0].msg,function(){
+                        });
+                    } else {
+                        bootbox.alert("保存失败!",function(){
+                            $("#save_material").removeClass("disabled");
+                        });
+                    }
+
+                } else {
+                    bootbox.alert("保存成功！", function() {
+                        $('#material-modal-table').modal('toggle');
+                        $("#save_material").removeClass("disabled");
+                        materialForm.resetForm();
+                        materialTable.fnDraw();
+                    });
+                }
+            });
+        }
+        $("#save_material").removeClass("disabled");
+    });
+
 });
 
 
 
-function testTableInit(){
+function tableInit(){
     materialTable = $('#material-table').dataTable({
         'bFilter' : false,
         'bProcessing' : true,
@@ -49,7 +98,7 @@ function testTableInit(){
                 }
             }, {
                 'mDataProp' : 'name',
-                'bSortable' : true
+                'bSortable' : false
             },{
                 'mDataProp' : 'info',
                 'bSortable' : false

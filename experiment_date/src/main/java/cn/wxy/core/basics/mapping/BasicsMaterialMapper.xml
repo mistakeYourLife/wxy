@@ -21,10 +21,10 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="cn.wxy.core.basics.model.BasicsMaterial">
-    insert into basics_material (id, name, info, 
+    insert into basics_material ( name, info,
       create_time)
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{info,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP})
+    values ( #{name,jdbcType=VARCHAR}, #{info,jdbcType=VARCHAR},
+      now())
   </insert>
   <insert id="insertSelective" parameterType="cn.wxy.core.basics.model.BasicsMaterial">
     insert into basics_material

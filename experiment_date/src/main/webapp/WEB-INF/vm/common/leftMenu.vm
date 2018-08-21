@@ -8,13 +8,14 @@
 
 #set($menus = $sysServiceUtil.getTreeMenu())
 #foreach($temp in  $menus)
-    <li class="open">
-        <a href="${root_url}${temp.href}" target-id="$temp1.id" name="${temp1.name}" class="dropdown-toggle">
+        <li class="open">
+        <a href="${root_url}${temp.href}" target-id="$temp.id" name="${temp.name}" class="dropdown-toggle">
             <i class="$!{temp.icon}"></i>
-            <span class="menu-text"> $temp.name</span>
+            ##<span class="menu-text"> $temp.name</span>
+            $temp.name
             <b class="arrow icon-angle-down"></b>
         </a>
-        <ul class="submenu" style="display:none;">
+        #*<ul class="submenu" style="display:none;">
             #foreach($temp1 in $temp.childList)
                     <li>
                         <a href="${root_url}${temp1.href}" target-id="$temp1.id" name="${temp1.name}">
@@ -23,6 +24,8 @@
                         </a>
                     </li>
             #end
-        </ul>
+        </ul>*#
     </li>
 #end
+#*
+

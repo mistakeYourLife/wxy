@@ -2,6 +2,7 @@ package cn.wxy.api;/**
  * Created by XR on 2018/8/16.
  */
 
+import cn.wxy.common.domain.ResultDO;
 import cn.wxy.common.pageable.Page;
 import cn.wxy.core.basics.manager.BasicsMaterialService;
 import cn.wxy.core.basics.model.BasicsMaterial;
@@ -12,6 +13,7 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestBindingException;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -36,7 +38,7 @@ public class BasicsMaterialController {
     }
 
 
-    /**mate
+    /**
      * 分页查询消息
      *
      * @param req
@@ -54,6 +56,24 @@ public class BasicsMaterialController {
         result.setTotalPageCount(basicsMaterials.size());
         result.setiTotalDisplayRecords(basicsMaterials.size());
         result.setiTotalRecords(basicsMaterials.size());
+        return result;
+    }
+
+
+    /**
+     * 保存
+     * @param basicsMaterial
+     * @param req
+     * @param resp
+     * @return
+     */
+    @RequestMapping(value = "save")
+    @ResponseBody
+    public ResultDO saveRedeem(
+            @ModelAttribute("basicsMaterial") BasicsMaterial basicsMaterial,
+            HttpServletRequest req, HttpServletResponse resp) {
+        ResultDO result = new ResultDO();
+        result = basicsMaterialService.saveBasicsMaterial(basicsMaterial);
         return result;
     }
 }

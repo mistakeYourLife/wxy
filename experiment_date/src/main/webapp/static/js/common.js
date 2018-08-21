@@ -46,6 +46,16 @@ $("#sidebar .submenu a").click(function (e) {
     $(this).parent("li").addClass("active");
 });
 
+$("#sidebar .open a").click(function (e) {
+    e.preventDefault();
+    var url = $(this).attr("href"),
+        title = $(this).text(),
+        tid = $(this).attr("target-id");
+    setIframeBox(tid, url, title);
+    $(this).parents("#sidebar").find("li").removeClass("active");
+    $(this).parent("li").addClass("active");
+});
+
 //获取上一个Tab
 var relatedTab = {};
 $("#iframeTabs").delegate('a[data-toggle="tab"]', 'shown.bs.tab', function (e) {

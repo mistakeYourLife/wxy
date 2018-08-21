@@ -7,6 +7,9 @@
     <result column="info" jdbcType="VARCHAR" property="info" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
+  <sql id="Base_Column_List">
+    id, unit, info, create_time
+  </sql>
   <insert id="insert" parameterType="cn.wxy.core.basics.model.BasicsIndex">
     insert into basics_index (id, unit, info, 
       create_time)
@@ -44,4 +47,10 @@
       </if>
     </trim>
   </insert>
+  <select id="getAllBasicsIndexs"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from basics_index
+  </select>
+
 </mapper>

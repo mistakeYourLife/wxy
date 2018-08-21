@@ -1,0 +1,67 @@
+<div tabindex="-1" class="modal fade" id="material-modal-table" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header no-padding">
+                <div class="table-header">
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">
+                        <span class="white">×</span>
+                    </button>
+                    原料品种
+                </div>
+            </div>
+            <div class="modal-body">
+                <form role="form" class="form-horizontal" id="material_form" method="post" enctype="multipart/form-data" >
+                    <input type="hidden" name="id"  id ="id"/>
+
+                    <div class="form-group">
+                        <label for="form-field-1" class="col-sm-3 control-label no-padding-right"> 名称: </label>
+                        <div class="col-sm-9">
+                            <div class="clearfix">
+                                <input type="text" name="name" class="col-xs-10 col-sm-8" placeholder="" id="form-field-name"
+                                       datatype="*">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="form-field-1" class="col-sm-3 control-label no-padding-right"> 详细信息: </label>
+                        <div class="col-sm-9">
+                            <div class="clearfix">
+                                <input type="text" name="info" class="col-xs-10 col-sm-8" placeholder="" id="form-field-info"
+                                       datatype="*">
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" id="save_material" class="btn btn-primary">保存</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<style>
+
+    .dz-size,.dz-input-data{
+        display:none;
+    }
+    .dz-success-mark{
+        display:none;
+    }
+    .dz-error-mark{
+        display:none;
+    }
+    .dropzone .dz-preview .dz-details, .dropzone-previews .dz-preview .dz-details{
+        width:400px;
+        height: 60px;
+    }
+    .dropzone .dz-preview .dz-details img, .dropzone-previews .dz-preview .dz-details img{
+        width:400px;
+        height: auto;
+    }
+</style>

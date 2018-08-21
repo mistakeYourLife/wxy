@@ -3,7 +3,14 @@
 #########################################script#####################################
 资料
 
+<div class="col-xs-12">
+    <p>
+        <button id = "new_material" type="button" class="btn btn-info btn-sm btn-primary" >新增</button>
+        <button id = "update_material" type="button" class="btn btn-pink btn-sm btn-primary" >修改</button>
+        <button id = "delete_material" type="button" class="btn btn-danger btn-sm btn-primary" >删除</button>
 
+    </p>
+</div>
 
 <div>
     <form class="form-horizontal" role="form">
@@ -15,7 +22,7 @@
                     <label class="col-sm-2 control-label">聚焦</label>
                     <div class="col-sm-10">
                         <input class="form-control" id="focusedInput" type="text" value="该输入框获得焦点...">
-                    </div>
+
                 </div>
             </td>
             <td>TB - Monthly</td>
@@ -53,63 +60,10 @@
     </div>
 </div>
 
-
-<input id="test" class="btn btn-default" type="submit" value="提交">
-
-<div class="preview">表格</div>
-<div class="view">
-    <table class="table" contenteditable="true">
-        <thead>
-        <tr>
-            <th>编号</th>
-            <th>产品</th>
-            <th>交付时间</th>
-            <th>状态</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>1</td>
-            <td>TB - Monthly</td>
-            <td>01/04/2012</td>
-            <td>Default</td>
-        </tr>
-        <tr class="success">
-            <td>1</td>
-            <td>TB - Monthly</td>
-            <td>01/04/2012</td>
-            <td>Approved</td>
-        </tr>
-        <tr class="error">
-            <td>2</td>
-            <td>TB - Monthly</td>
-            <td>02/04/2012</td>
-            <td>Declined</td>
-        </tr>
-        <tr class="warning">
-            <td>3</td>
-            <td>TB - Monthly</td>
-            <td>03/04/2012</td>
-            <td>Pending</td>
-        </tr>
-        <tr class="info">
-            <td>4</td>
-            <td>TB - Monthly</td>
-            <td>04/04/2012</td>
-            <td>Call in to confirm</td>
-        </tr>
-        </tbody>
-    </table>
-    <ul class="pager"  >
-        <li ><a href="#">&laquo;</a></li>
-        <li ><a href="#">1</a></li>
-        <li ><a href="#">2</a></li>
-        <li ><a href="#">3</a></li>
-        <li ><a href="#">4</a></li>
-        <li ><a href="#">5</a></li>
-        <li ><a href="#">&raquo;</a></li>
-    </ul>
-</div>
-</div>
-
 <script type="text/javascript" src="$root_js_url/material.js"></script>
+
+
+
+
+
+#parse("/basics/material/add.vm")
