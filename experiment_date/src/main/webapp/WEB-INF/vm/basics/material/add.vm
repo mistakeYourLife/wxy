@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="form-field-1" class="col-sm-3 control-label no-padding-right"> 详细信息: </label>
+                        <label for="form-field-1" class="col-sm-3 control-label no-padding-right"> 详细 信息: </label>
                         <div class="col-sm-9">
                             <div class="clearfix">
                                 <input type="text" name="info" class="col-xs-10 col-sm-8" placeholder="" id="form-field-info"
